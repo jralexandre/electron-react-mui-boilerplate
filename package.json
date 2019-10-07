@@ -1,0 +1,32 @@
+{
+  "name": "electron-react-mui-boilerplate",
+  "version": "0.0.1",
+  "description": "Electron application boilerplate based on React, React Router, Webpack, React Hot Loader, Redux, Material UI and Typescript.",
+  "main": "app/app.html",
+  "repository": "https://github.com/jralexandre/electron-react-mui-boilerplate.git",
+  "author": "Jean Ribeiro Alexandre <jean.alexandre.rs@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "keywords": [
+    "electron",
+    "boilerplate",
+    "react",
+    "redux",
+    "materialui",
+    "webpack",
+    "hot",
+    "reload",
+    "typescript"
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.6.2",
+    "babel-loader": "^8.0.6",
+    "electron": "^6.0.11",
+    "eslint": "^6.5.1",
+    "typescript": "^3.6.3",
+    "webpack": "^4.41.0",
+    "webpack-dev-server": "^3.8.2",
+    "webpack-merge": "^4.2.2",
+    "yarn": "^1.19.0"
+  }
+}

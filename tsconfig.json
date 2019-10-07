@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "outDir": "./app/dist/",
+        "module": "commonjs",
+        "target": "es2019",
+        "jsx": "react",
+        "noEmit": true,
+        "strict": true,
+        "esModuleInterop": true,
+        "noImplicitAny": true,
+        "noImplicitThis": true,
+        "strictNullChecks": true
+    },
+    "include": ["app/**/*", "configs/*"],
+    "exclude": ["node_modules", "app/dist", "dist"]
+}

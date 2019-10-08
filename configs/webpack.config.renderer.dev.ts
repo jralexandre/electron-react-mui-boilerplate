@@ -1,3 +1,5 @@
+/* eslint global-require: off, import/no-dynamic-require: off */
+
 import webpack from 'webpack';
 import merge from 'webpack-merge';
 import path from 'path';

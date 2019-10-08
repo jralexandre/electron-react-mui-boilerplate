@@ -9,7 +9,9 @@
   "scripts": {
     "dev": "cross-env START_HOT=1 yarn start-renderer-dev",
     "start-main-dev": "tsc -p tsconfig.dev.json && cross-env HOT=1 NODE_ENV=development electron -r @babel/register ./app/dist/main.dev.js",
-    "start-renderer-dev": "cross-env NODE_ENV=development webpack-dev-server --config configs/webpack.config.renderer.dev.ts"
+    "start-renderer-dev": "cross-env NODE_ENV=development webpack-dev-server --config configs/webpack.config.renderer.dev.ts",
+    "lint": "cross-env NODE_ENV=development eslint --ext .ts --ext .tsx --cache --format=pretty .",
+    "lint-fix": "yarn --silent lint --fix"
   },
   "keywords": [
     "electron",
@@ -52,6 +54,9 @@
     "@types/webpack": "^4.39.2",
     "@types/webpack-dev-server": "^3.1.7",
     "@types/webpack-merge": "^4.1.5",
+    "@typescript-eslint/eslint-plugin": "^2.3.3",
+    "@typescript-eslint/parser": "^2.3.3",
+    "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",
     "babel-plugin-dev-expression": "^0.2.2",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
@@ -60,6 +65,14 @@
     "electron": "^6.0.11",
     "electron-devtools-installer": "^2.2.4",
     "eslint": "^6.5.1",
+    "eslint-config-prettier": "^6.4.0",
+    "eslint-formatter-pretty": "^2.1.1",
+    "eslint-import-resolver-webpack": "^0.11.1",
+    "eslint-plugin-compat": "^3.3.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.16.0",
+    "prettier": "^1.18.2",
     "react-hot-loader": "^4.12.14",
     "typescript": "^3.6.3",
     "webpack": "^4.41.0",
@@ -68,6 +81,7 @@
     "webpack-merge": "^4.2.2",
     "yarn": "^1.19.0"
   },
+  "browserslist": "electron 1.6",
   "dependencies": {
     "react": "^16.10.2",
     "react-dom": "^16.10.2"

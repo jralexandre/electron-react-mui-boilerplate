@@ -8,7 +8,7 @@
   "private": false,
   "scripts": {
     "dev": "cross-env START_HOT=1 yarn start-renderer-dev",
-    "start-main-dev": "tsc -p tsconfig.dev.json && cross-env HOT=1 NODE_ENV=development electron -r @babel/register ./app/dist/main.dev.js",
+    "start-main-dev": "cross-env HOT=1 NODE_ENV=development electron -r ./babel-register.js ./app/main.dev.ts",
     "start-renderer-dev": "cross-env NODE_ENV=development webpack-dev-server --config configs/webpack.config.renderer.dev.ts",
     "lint": "cross-env NODE_ENV=development eslint --ext .ts --ext .tsx --cache --format=pretty .",
     "lint-fix": "yarn --silent lint --fix"

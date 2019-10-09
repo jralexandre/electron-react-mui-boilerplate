@@ -36,7 +36,7 @@ app.on('ready', async () => {
         }
     });
 
-    mainWindow.loadURL(`file://${__dirname}/../../app/app.html`);
+    mainWindow.loadURL(`file://${__dirname}/app.html`);
 
     mainWindow.webContents.on('dom-ready', async () => {
         if (

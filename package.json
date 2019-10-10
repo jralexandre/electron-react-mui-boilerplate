@@ -86,7 +86,7 @@
   "dependencies": {
     "@material-ui/core": "^4.5.0",
     "react": "^16.10.2",
-    "react-dom": "^16.10.2",
+    "react-dom": "npm:@hot-loader/react-dom",
     "react-router-dom": "^5.1.2"
   }
 }

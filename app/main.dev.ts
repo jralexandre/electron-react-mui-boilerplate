@@ -7,13 +7,13 @@ import installExtension, {
 
 let mainWindow: BrowserWindow | null = null;
 
-const installExtensions = async (): Promise<void | string[]> => {
+const installExtensions = async (): Promise<string[]> => {
     const forceDownload = !!process.env.UPGRADE_EXTENSIONS;
     const extensions = [REACT_DEVELOPER_TOOLS, REDUX_DEVTOOLS];
 
-    return Promise.all(
+    return await Promise.all(
         extensions.map(name => installExtension(name, forceDownload))
-    ).catch(console.log);
+    );
 };
 
 app.commandLine.appendSwitch('remote-debugging-port', '9223');
@@ -26,7 +26,7 @@ app.on('window-all-closed', () => {
     }
 });
 
-app.on('ready', async () => {
+app.on('ready', () => {
     mainWindow = new BrowserWindow({
         show: false,
         width: 1024,
@@ -38,12 +38,12 @@ app.on('ready', async () => {
 
     mainWindow.loadURL(`file://${__dirname}/app.html`);
 
-    mainWindow.webContents.on('dom-ready', async () => {
+    mainWindow.webContents.on('dom-ready', () => {
         if (
             process.env.NODE_ENV === 'development' ||
             process.env.DEBUG_PROD === 'true'
         ) {
-            await installExtensions();
+            installExtensions().catch(console.log);
         }
     });
 

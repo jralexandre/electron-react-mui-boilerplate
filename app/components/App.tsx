@@ -4,7 +4,8 @@ import {
     Switch,
     Route,
     useLocation,
-    Link as RouterLink
+    Link as RouterLink,
+    matchPath
 } from 'react-router-dom';
 
 import AppBar from '@material-ui/core/AppBar';
@@ -33,7 +34,7 @@ const App = (): JSX.Element => {
     const classes = useStyles();
     const location = useLocation();
     const route = Object.values(routes)
-        .filter(r => r.path === location.pathname)
+        .filter(r => matchPath(location.pathname, r.path) !== null)
         .shift();
     const displayName = route === undefined ? 'Home' : route.displayName;
     return (

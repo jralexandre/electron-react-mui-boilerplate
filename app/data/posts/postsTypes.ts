@@ -1,19 +1,21 @@
 import { Action } from 'redux';
 
-export const ADD_POST = 'ADD_POST';
-export const EDIT_POST = 'EDIT_POST';
-export const DELETE_POST = 'DELETE_POST';
+export enum PostActionTypes {
+    ADD_POST = 'ADD_POST',
+    EDIT_POST = 'EDIT_POST',
+    DELETE_POST = 'DELETE_POST'
+}
 
-export interface AddPostAction extends Action<string> {
+export interface AddPostAction extends Action<PostActionTypes.ADD_POST> {
     data: Post;
 }
 
-export interface EditPostAction extends Action<string> {
+export interface EditPostAction extends Action<PostActionTypes.EDIT_POST> {
     id: number;
     data: Post;
 }
 
-export interface DeletePostAction extends Action<string> {
+export interface DeletePostAction extends Action<PostActionTypes.DELETE_POST> {
     id: number;
 }
 

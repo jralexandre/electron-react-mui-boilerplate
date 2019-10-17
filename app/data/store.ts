@@ -1,5 +1,5 @@
 import { Store as ReduxStore, createStore } from 'redux';
-import createRootReducer, { RootState, RootAction } from '../reducers/rootReducer';
+import createRootReducer, { RootState, RootAction } from './reducer';
 
 export type Store = ReduxStore<RootState, RootAction>;
 

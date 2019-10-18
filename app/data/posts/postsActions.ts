@@ -1,14 +1,14 @@
 import { ActionCreator, ActionCreatorsMapObject } from 'redux';
-import { PostAction, Post, PostActionTypes } from './postsTypes';
+import { PostAction, PostType, PostActionTypes } from './postsTypes';
 
-export const addPost: ActionCreator<PostAction> = (data: Post) => ({
+export const addPost: ActionCreator<PostAction> = (data: PostType) => ({
     type: PostActionTypes.ADD_POST,
     data
 });
 
 export const editPost: ActionCreator<PostAction> = (
     id: number,
-    data: Post
+    data: PostType
 ) => ({
     type: PostActionTypes.EDIT_POST,
     id,

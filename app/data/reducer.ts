@@ -1,9 +1,9 @@
 import { combineReducers, Reducer } from 'redux';
-import { Posts, PostAction } from './posts/postsTypes';
+import { PostsType, PostAction } from './posts/postsTypes';
 import posts from './posts/postsReducer';
 
 export interface RootState {
-    posts: Posts;
+    posts: PostsType;
 }
 
 export type RootAction = PostAction;

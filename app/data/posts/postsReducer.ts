@@ -1,13 +1,15 @@
-import { Posts, PostAction, PostActionTypes } from './postsTypes';
+import { PostsType, PostAction, PostActionTypes } from './postsTypes';
 
 export default function posts(
-    state: Posts = {
-        byId: {},
-        allIds: [],
-        newPostId: 1
+    state: PostsType = {
+        byId: {
+            1: { id: 1, title: 'Sample post', content: 'This is a sample post.' }
+        },
+        allIds: [ 1 ],
+        newPostId: 2
     },
     action: PostAction
-): Posts {
+): PostsType {
     switch (action.type) {
         case PostActionTypes.ADD_POST:
             return {

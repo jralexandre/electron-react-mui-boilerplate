@@ -7,12 +7,12 @@ export enum PostActionTypes {
 }
 
 export interface AddPostAction extends Action<PostActionTypes.ADD_POST> {
-    data: Post;
+    data: PostType;
 }
 
 export interface EditPostAction extends Action<PostActionTypes.EDIT_POST> {
     id: number;
-    data: Post;
+    data: PostType;
 }
 
 export interface DeletePostAction extends Action<PostActionTypes.DELETE_POST> {
@@ -21,15 +21,15 @@ export interface DeletePostAction extends Action<PostActionTypes.DELETE_POST> {
 
 export type PostAction = AddPostAction | EditPostAction | DeletePostAction;
 
-export interface Post {
+export interface PostType {
     id: number;
     title: string;
     content: string;
 }
 
-export interface Posts {
+export interface PostsType {
     byId: {
-        [id: number]: Post;
+        [id: number]: PostType;
     };
     allIds: number[];
     newPostId: number;

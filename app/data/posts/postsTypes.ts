@@ -19,7 +19,13 @@ export interface DeletePostAction extends Action<PostActionTypes.DELETE_POST> {
     id: number;
 }
 
-export type PostAction = AddPostAction | EditPostAction | DeletePostAction;
+export type CustomPostAction = Action<''>;
+
+export type PostAction =
+    | AddPostAction
+    | EditPostAction
+    | DeletePostAction
+    | CustomPostAction;
 
 export interface PostType {
     id: number;

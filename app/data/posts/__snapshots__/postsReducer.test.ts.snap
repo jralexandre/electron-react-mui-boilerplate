@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`postsReducer should handle initial state 1`] = `
+Object {
+  "allIds": Array [
+    1,
+  ],
+  "byId": Object {
+    "1": Object {
+      "content": "This is a sample post.",
+      "id": 1,
+      "title": "Sample post",
+    },
+  },
+  "newPostId": 2,
+}
+`;

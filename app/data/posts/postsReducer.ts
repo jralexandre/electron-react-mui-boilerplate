@@ -28,7 +28,7 @@ export default function posts(
                 ? {
                       byId: {
                           ...state.byId,
-                          [action.id]: { ...action.data }
+                          [action.id]: { ...action.data, id: action.id }
                       },
                       allIds: state.allIds,
                       newPostId: state.newPostId

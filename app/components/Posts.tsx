@@ -1,27 +1,85 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import Box from '@material-ui/core/Box';
-import Paper from '@material-ui/core/Paper';
+import Fab from '@material-ui/core/Fab';
 import Typography from '@material-ui/core/Typography';
+import createStyles from '@material-ui/core/styles/createStyles';
+import makeStyles from '@material-ui/core/styles/makeStyles';
+
+import AddIcon from '@material-ui/icons/Add';
+
 import { ConnectedProps } from './PostsContainer';
+import Post from './Post';
 
 type Props = ConnectedProps;
 
-const Posts = ({ posts }: Props): JSX.Element => (
-    <Box>
-        {posts.allIds.length > 0 ? (
-            posts.allIds.map(id => (
-                <Paper key={id}>
-                    <Typography variant="h3" component="h2" gutterBottom>{posts.byId[id].title}</Typography>
-                    <Typography variant="body2">
-                        {posts.byId[id].content}
-                    </Typography>
-                </Paper>
-            ))
-        ) : (
-            <Typography variant="body2">There is no posts created.</Typography>
-        )}
-    </Box>
+const useStyles = makeStyles(theme =>
+    createStyles({
+        fab: {
+            position: 'fixed',
+            bottom: theme.spacing(2),
+            right: theme.spacing(2)
+        }
+    })
 );
+
+const Posts = ({
+    posts,
+    addPost,
+    editPost,
+    deletePost
+}: Props): JSX.Element => {
+    const classes = useStyles();
+
+    const [creating, setCreating] = useState(false);
+
+    if (creating) {
+        return (
+            <Box>
+                <Post
+                    editing
+                    onSave={post => {
+                        addPost(post);
+                        setCreating(false);
+                        return false;
+                    }}
+                    onCancel={() => setCreating(false)}
+                />
+            </Box>
+        );
+    }
+
+    return (
+        <Box>
+            {posts.allIds.length > 0 ? (
+                posts.allIds.map(id => (
+                    <Post
+                        key={id}
+                        post={posts.byId[id]}
+                        onSave={post => {
+                            editPost(id, post);
+                            return false;
+                        }}
+                        onDelete={post => {
+                            deletePost(post.id);
+                        }}
+                    />
+                ))
+            ) : (
+                <Typography variant="body2">
+                    There is no posts created.
+                </Typography>
+            )}
+            <Fab
+                color="primary"
+                aria-label="Create post"
+                className={classes.fab}
+                onClick={() => setCreating(true)}
+            >
+                <AddIcon />
+            </Fab>
+        </Box>
+    );
+};
 
 export default Posts;

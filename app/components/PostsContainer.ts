@@ -3,7 +3,7 @@ import Posts from './Posts';
 import { Dispatch, bindActionCreators, ActionCreatorsMapObject } from 'redux';
 import { RootState } from '../data/reducer';
 import { PostsType, PostAction } from '../data/posts/postsTypes';
-import { deletePost } from '../data/posts/postsActions';
+import { postsActionCreators } from '../data/posts/postsActions';
 
 type StateProps = { posts: PostsType };
 
@@ -15,9 +15,7 @@ const mapDispatchToProps = (
     dispatch: Dispatch
 ): ActionCreatorsMapObject<PostAction> =>
     bindActionCreators(
-        {
-            deletePost
-        },
+        postsActionCreators,
         dispatch
     );
 

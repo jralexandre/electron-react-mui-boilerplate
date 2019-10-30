@@ -19,13 +19,12 @@ const useStyles = makeStyles(() =>
     })
 );
 
-const App = (): JSX.Element => {
+export const App = (): JSX.Element => {
     const classes = useStyles();
 
     return (
         <>
             <CssBaseline />
-            <AppBar />
             <Box className={classes.rootBox}>
                 <Switch>
                     <Route path={routes.HOME.path} component={Home} />

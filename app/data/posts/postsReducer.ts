@@ -2,11 +2,9 @@ import { PostsType, PostAction, PostActionTypes } from './postsTypes';
 
 export default function posts(
     state: PostsType = {
-        byId: {
-            1: { id: 1, title: 'Sample post', content: 'This is a sample post.' }
-        },
-        allIds: [ 1 ],
-        newPostId: 2
+        byId: {},
+        allIds: [],
+        newPostId: 1
     },
     action: PostAction
 ): PostsType {

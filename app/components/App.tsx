@@ -7,7 +7,6 @@ import makeStyles from '@material-ui/core/styles/makeStyles';
 import createStyles from '@material-ui/core/styles/createStyles';
 
 import routes from '../constants/routes';
-import AppBar from './AppBar';
 import Home from './Home';
 import CssBaseline from '@material-ui/core/CssBaseline';
 

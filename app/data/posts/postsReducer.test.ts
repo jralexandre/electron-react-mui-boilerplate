@@ -51,14 +51,14 @@ describe('postsReducer', () => {
         expect(Object.entries(newState.byId)).toHaveLength(0);
     });
 
-    it('should handle custom action', () => {
+    /*it('should handle custom action', () => {
         const newState = posts(sampleState, { type: '' });
 
         expect(newState).toEqual(sampleState);
-    });
+    });*/
 
     it('should handle initial state', () => {
-        expect(posts(undefined, { type: '' })).toMatchSnapshot();
+        expect(posts(undefined, { type: PostActionTypes.DELETE_POST, id: -1 })).toMatchSnapshot();
     });
 
     it('should not edit non existing post', () => {

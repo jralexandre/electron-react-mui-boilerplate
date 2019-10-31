@@ -8,10 +8,15 @@ import makeStyles from '@material-ui/core/styles/makeStyles';
 
 import AddIcon from '@material-ui/icons/Add';
 
-import { ConnectedProps } from './PostsContainer';
 import Post from './Post';
+import { PostsType, PostType } from '../data/posts/postsTypes';
 
-type Props = ConnectedProps;
+interface Props {
+    posts: PostsType;
+    addPost: (post: PostType) => void;
+    editPost: (id: number, post: PostType) => void;
+    deletePost: (id: number) => void;
+};
 
 const useStyles = makeStyles(theme =>
     createStyles({
@@ -23,13 +28,10 @@ const useStyles = makeStyles(theme =>
     })
 );
 
-const Posts = ({
-    posts,
-    addPost,
-    editPost,
-    deletePost
-}: Props): JSX.Element => {
+const Posts = (props: Props): JSX.Element => {
     const classes = useStyles();
+
+    const { posts, addPost, editPost, deletePost } = props;
 
     const [creating, setCreating] = useState(false);
 

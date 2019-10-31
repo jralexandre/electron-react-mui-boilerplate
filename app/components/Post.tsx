@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 
 import Button from '@material-ui/core/Button';
-import FormControl from '@material-ui/core/FormControl';
 import Grid from '@material-ui/core/Grid';
-import InputLabel from '@material-ui/core/InputLabel';
 import Paper from '@material-ui/core/Paper';
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
@@ -65,7 +63,7 @@ const Post = (props: Props): JSX.Element => {
     ): void => {
         if (e.target.name == 'title')
             setPost({ ...post, title: e.target.value });
-        else if (e.target.name == 'content')
+        else
             setPost({ ...post, content: e.target.value });
     };
 

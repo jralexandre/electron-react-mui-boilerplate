@@ -26,6 +26,6 @@ describe('<PostsContainer />', () => {
             </Provider>
         );
 
-        expect(wrapper.find(Typography).text()).toBe('There is no posts created.');
+        expect(wrapper.find(Typography).text()).toBe('There are no posts created.');
     });
 });

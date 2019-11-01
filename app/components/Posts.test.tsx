@@ -40,7 +40,7 @@ describe('<Posts />', () => {
         const { wrapper } = setup(basePosts);
 
         expect(wrapper.find(Typography).text()).toBe(
-            'There is no posts created.'
+            'There are no posts created.'
         );
     });
 
@@ -96,7 +96,7 @@ describe('<Posts />', () => {
 
         // Should return to post list without actually saving during test
         expect(wrapper.find(Typography).text()).toBe(
-            'There is no posts created.'
+            'There are no posts created.'
         );
     });
 
@@ -120,7 +120,7 @@ describe('<Posts />', () => {
         if (onCancel !== undefined) onCancel();
 
         expect(wrapper.find(Typography).text()).toBe(
-            'There is no posts created.'
+            'There are no posts created.'
         );
     });
 

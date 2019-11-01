@@ -69,7 +69,7 @@ const Posts = (props: Props): JSX.Element => {
                 ))
             ) : (
                 <Typography variant="body2">
-                    There is no posts created.
+                    There are no posts created.
                 </Typography>
             )}
             <Fab

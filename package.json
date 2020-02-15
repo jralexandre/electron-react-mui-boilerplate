@@ -89,7 +89,7 @@
     "webpack-cli": "^3.3.9",
     "webpack-dev-server": "^3.8.2",
     "webpack-merge": "^4.2.2",
-    "yarn": "^1.19.0"
+    "yarn": "^1.22.0"
   },
   "browserslist": "electron 1.6",
   "dependencies": {
